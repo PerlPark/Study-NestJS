@@ -55,4 +55,18 @@ describe('ExhibitsService', () => {
       }
     });
   });
+
+  describe('create', () => {
+    it('should create a exhibition', () => {
+      const beforeCreate = service.getAll().length;
+      service.create({
+        title: '이집트2',
+        startDate: 2023,
+        endDate: 2024,
+        location: ['서울', '예술의 전당'],
+      });
+      const afterCreate = service.getAll().length;
+      expect(afterCreate).toBeGreaterThan(beforeCreate);
+    });
+  });
 });
