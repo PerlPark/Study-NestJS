@@ -69,4 +69,20 @@ describe('ExhibitsService', () => {
       expect(afterCreate).toBeGreaterThan(beforeCreate);
     });
   });
+
+  describe('update', () => {
+    it('should update a exhibition', () => {
+      service.update(1, { title: 'Updated Test' });
+      const exhibition = service.getOne(1);
+      expect(exhibition.title).toEqual('Updated Test');
+    });
+    it('should throw a NotFoundException', () => {
+      try {
+        service.getOne(999);
+      } catch (e) {
+        expect(e).toBeInstanceOf(NotFoundException);
+        expect(e.message).toEqual('Not Found Exhibit width ID: 999');
+      }
+    });
+  });
 });
