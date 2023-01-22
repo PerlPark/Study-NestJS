@@ -29,7 +29,7 @@ describe('ExhibitsService', () => {
       const exhibition = service.getOne(1);
       expect(exhibition).toBeDefined();
     });
-    it('should throw 404 error', () => {
+    it('should throw a NotFoundException', () => {
       try {
         service.getOne(999);
       } catch (e) {
@@ -46,7 +46,7 @@ describe('ExhibitsService', () => {
       const afterDelete = service.getAll().length;
       expect(afterDelete).toBeLessThan(beforeDelete);
     });
-    it('should return a 404', () => {
+    it('should throw a NotFoundException', () => {
       try {
         service.getOne(999);
       } catch (e) {
