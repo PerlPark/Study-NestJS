@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateExhibitDto } from './dto/create-exhibit.dto';
 import { UpdateExhibitDto } from './dto/update-exhibit.dto';
-import dummy from './dummy';
+import dummy from '../dummy';
 import { Exhibit } from './entities/exhibit.entity';
 
 @Injectable()

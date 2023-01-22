@@ -1,4 +1,4 @@
-import { Exhibit } from '../entities/exhibit.entity';
+import { Exhibit } from '../exhibits/entities/exhibit.entity';
 
 const dummy: Exhibit[] = [
   {
